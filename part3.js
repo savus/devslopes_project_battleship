@@ -4,7 +4,7 @@ const alphabetList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const gridSize = 10;
 let gameOver = false;
 let enemysVisible = false;
-let gridGUI = false;
+let gridGUI = true;
 const boardSymbols = {
    empty: ' ',
    miss: 'O',
@@ -204,6 +204,7 @@ const resetValues = () => {
 const beginGame = () => {
    resetValues();
    readlineSync.keyIn('Press any key to continue');
+   printGrid();
    ships.forEach((ship) => placeShip(ship));
    while(!gameOver) {
       performAttack();
